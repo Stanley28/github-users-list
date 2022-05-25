@@ -24,8 +24,10 @@ const mutations = {
 
 const actions = {
   async login({ commit }, payload) {
+    // Proxy in development mode
+    const host = process.env.NODE_ENV === 'development' ? '' : 'https://github.com';
     const response = await fetch(
-      `/login/oauth/access_token?client_id=${config.client_id}&client_secret=${config.client_secret}&code=${payload.code}`,
+      `${host}/login/oauth/access_token?client_id=${config.client_id}&client_secret=${config.client_secret}&code=${payload.code}`,
       {
         method: "POST",
         headers: {
