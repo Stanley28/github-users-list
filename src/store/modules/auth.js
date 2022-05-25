@@ -25,7 +25,7 @@ const mutations = {
 const actions = {
   async login({ commit }, payload) {
     const response = await fetch(
-      `https://github.com/login/oauth/access_token?client_id=${config.client_id}&client_secret=${config.client_secret}&code=${payload.code}`,
+      `/login/oauth/access_token?client_id=${config.client_id}&client_secret=${config.client_secret}&code=${payload.code}`,
       {
         method: "POST",
         headers: {
