@@ -2,6 +2,7 @@
 
 ## Note:
 Authorization callback URL in Github application settings set as http://localhost:8080/handle-code, that why you need to check project with this host.
+In production mode you may encounter with CORS problem at authorization.
 ## Project setup
 ```
 yarn install
